@@ -1,6 +1,6 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 
 export const Container = styled(SafeAreaView)`
   flex: 1;
@@ -20,10 +20,29 @@ export const Header = styled.View`
 export const Logo = styled.Image`
 `
 
-export const ProfilePicture = styled.Image`
+export const ProfilePictureContainer = styled.View`
   width: 40px;
   height: 40px;
 
   border-radius: 100px;
-  border: ${({ theme }) => theme.COLORS.GRAY_2} 2px solid;
+  border-color: ${({ theme }) => theme.COLORS.GRAY_2};
+  border-width: 2px;
+  border-style: solid;
+
+  overflow: hidden;
+`
+
+export const ProfilePicture = styled.Image`
+  width: 100%;
+  height: 100%;
+`
+
+export const NewMealText = styled.Text`
+  margin-bottom: 8px;
+
+  ${({ theme }) => css`
+    color: ${ theme.COLORS.GRAY_1 };
+    font-family: ${ theme.FONT_FAMILY.REGULAR };
+    font-size: ${ theme.FONT_SIZE.MD }px;
+  `};
 `
