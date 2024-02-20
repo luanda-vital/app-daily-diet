@@ -15,10 +15,11 @@ export const Header = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-`
+  margin-bottom: 32px;
+`;
 
 export const Logo = styled.Image`
-`
+`;
 
 export const ProfilePictureContainer = styled.View`
   width: 40px;
@@ -30,12 +31,12 @@ export const ProfilePictureContainer = styled.View`
   border-style: solid;
 
   overflow: hidden;
-`
+`;
 
 export const ProfilePicture = styled.Image`
   width: 100%;
   height: 100%;
-`
+`;
 
 export const NewMealText = styled.Text`
   margin-bottom: 8px;
@@ -45,7 +46,7 @@ export const NewMealText = styled.Text`
     font-family: ${ theme.FONT_FAMILY.REGULAR };
     font-size: ${ theme.FONT_SIZE.MD }px;
   `};
-`
+`;
 
 export const ListHeader = styled.Text`
   margin-bottom: -24px;
@@ -60,6 +61,20 @@ export const ListItemSeparator = styled.View`
   height: 8px;
 `;
 
-export const ListSectionSeparator = styled.View`
-  padding-top: 32px;
+export const ListSectionSeparator = styled.Text`
+  height: 32px;
+`;
+
+export const EmptyListContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const EmptyListText = styled.Text`
+  ${({ theme }) => css`
+    color: ${ theme.COLORS.GRAY_3 };
+    font-family: ${ theme.FONT_FAMILY.REGULAR };
+    font-size: ${ theme.FONT_SIZE.SM }px;
+  `};
 `;

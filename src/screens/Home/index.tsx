@@ -4,7 +4,7 @@ import {
   Container,
   Header, Logo, ProfilePictureContainer, ProfilePicture,
   NewMealText,
-  ListHeader, ListSectionSeparator, ListItemSeparator
+  ListHeader, ListSectionSeparator, ListItemSeparator, EmptyListContainer, EmptyListText
 } from './styles';
 
 import { Button } from '@components/Button';
@@ -19,6 +19,11 @@ interface Meal {
   time: string;
   followingDiet: boolean;
 }
+
+interface mealsList {
+  title: string,
+  data: Meal[]
+} 
 
 export function Home() {
   const meals: Meal[] = [
@@ -76,17 +81,17 @@ export function Home() {
     return groupedMeals;
   };
 
-  function formatList(mealsList: { [date: string]: Meal[] }) {
-    const formattedList = Object.keys(mealsList).map((date) => ({
+  function formatList(meals: { [date: string]: Meal[] }) {
+    const formattedList = Object.keys(meals).map((date) => ({
       title: date,
-      data: mealsList[date],
+      data: meals[date],
     }));
 
     return formattedList;
   }
 
-  function orderDates(mealsList: { title: string, data: Meal[] }[]) {
-    const orderedDates = mealsList.sort((a, b) => {
+  function orderDates(meals: mealsList[]) {
+    const orderedDates = meals.sort((a, b) => {
       const dateA = new Date(a.title);
       const dateB = new Date(b.title);
 
@@ -96,8 +101,8 @@ export function Home() {
     return orderedDates;
   }
 
-  function orderTime(mealsList: { title: string, data: Meal[] }[]) {
-    const orderedTime = mealsList.map((section) => {
+  function orderTime(meals: mealsList[]) {
+    const orderedTime = meals.map((section) => {
       section.data.sort((a, b) => {
         const timeA = new Date(`2002-11-03T${a.time}`);
         const timeB = new Date(`2002-11-03T${b.time}`);
@@ -157,8 +162,16 @@ export function Home() {
     
         ItemSeparatorComponent={() => <ListItemSeparator />}
         SectionSeparatorComponent={() => <ListSectionSeparator />}
+        
+        ListEmptyComponent={
+          <EmptyListContainer>
+            <EmptyListText>
+              Ainda não há refeições cadastradas.
+            </EmptyListText>
+          </EmptyListContainer>
+        }
 
-        contentContainerStyle={{paddingBottom: 120}} 
+        contentContainerStyle={[meals.length !== 0 ? { paddingBottom: 100 } : { flex: 1}]} 
         showsVerticalScrollIndicator={false}
       />
     </Container>
