@@ -46,3 +46,20 @@ export const NewMealText = styled.Text`
     font-size: ${ theme.FONT_SIZE.MD }px;
   `};
 `
+
+export const ListHeader = styled.Text`
+  margin-bottom: -24px;
+  ${({ theme }) => css`
+    color: ${ theme.COLORS.GRAY_1 };
+    font-family: ${ theme.FONT_FAMILY.BOLD };
+    font-size: ${ theme.FONT_SIZE.LG }px;
+  `};
+`;
+
+export const ListItemSeparator = styled.View`
+  height: 8px;
+`;
+
+export const ListSectionSeparator = styled.View`
+  padding-top: 32px;
+`;
