@@ -6,6 +6,7 @@ import theme from  './src/theme';
 
 import { Home } from '@screens/Home';
 import { Loading } from '@components/Loading';
+import { NewMeal } from '@screens/NewMeal';
 
 export default function App() {
   const [fontsLoaded] = useFonts({NunitoSans_400Regular, NunitoSans_700Bold});
@@ -18,7 +19,7 @@ export default function App() {
         translucent
       />
 
-      {fontsLoaded ? <Home /> : <Loading/>}
+      {fontsLoaded ? <NewMeal /> : <Loading/>}
     </ThemeProvider>
   );
 }
