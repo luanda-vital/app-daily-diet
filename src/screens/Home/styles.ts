@@ -43,7 +43,7 @@ export const NewMealText = styled.Text`
   ${({ theme }) => css`
     color: ${ theme.COLORS.GRAY_1 };
     font-family: ${ theme.FONT_FAMILY.REGULAR };
-    font-size: ${ theme.FONT_SIZE.MD }px;
+    font-size: ${ theme.FONT_SIZE.BODY_M }px;
   `};
 `;
 
@@ -52,7 +52,7 @@ export const ListHeader = styled.Text`
   ${({ theme }) => css`
     color: ${ theme.COLORS.GRAY_1 };
     font-family: ${ theme.FONT_FAMILY.BOLD };
-    font-size: ${ theme.FONT_SIZE.LG }px;
+    font-size: ${ theme.FONT_SIZE.TITLE_S }px;
   `};
 `;
 
@@ -74,6 +74,6 @@ export const EmptyListText = styled.Text`
   ${({ theme }) => css`
     color: ${ theme.COLORS.GRAY_3 };
     font-family: ${ theme.FONT_FAMILY.REGULAR };
-    font-size: ${ theme.FONT_SIZE.SM }px;
+    font-size: ${ theme.FONT_SIZE.BODY_S }px;
   `};
 `;

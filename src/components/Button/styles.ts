@@ -29,7 +29,7 @@ export const Text = styled.Text <Props>`
   ${({ theme, type }) => css`
     color: ${ type === 'SOLID' ? theme.COLORS.WHITE : theme.COLORS.GRAY_1 };
     font-family: ${ theme.FONT_FAMILY.BOLD };
-    font-size: ${ theme.FONT_SIZE.SM }px;
+    font-size: ${ theme.FONT_SIZE.TITLE_XS }px;
   `};
 `
 

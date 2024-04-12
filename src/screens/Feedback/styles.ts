@@ -20,7 +20,7 @@ export const Title = styled.Text <Props>`
   ${({ theme, type }) => css`
     color: ${ type === 'followingDiet' ? theme.COLORS.GREEN_DARK : theme.COLORS.RED_DARK };
     font-family: ${ theme.FONT_FAMILY.BOLD };
-    font-size: ${ theme.FONT_SIZE.XL }px;
+    font-size: ${ theme.FONT_SIZE.TITLE_M }px;
   `};
 
   text-align: center;
@@ -32,7 +32,7 @@ export const Text = styled.Text`
   ${({ theme }) => css`
     color: ${ theme.COLORS.GRAY_1 };
     font-family: ${ theme.FONT_FAMILY.REGULAR };
-    font-size: ${ theme.FONT_SIZE.MD }px;
+    font-size: ${ theme.FONT_SIZE.BODY_M }px;
   `};
 
   text-align: center;

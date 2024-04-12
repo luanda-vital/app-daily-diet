@@ -44,6 +44,6 @@ export const SelectText = styled.Text`
   ${({ theme }) => css`
     color: ${ theme.COLORS.GRAY_1 };
     font-family: ${ theme.FONT_FAMILY.BOLD };
-    font-size: ${ theme.FONT_SIZE.SM }px;
+    font-size: ${ theme.FONT_SIZE.TITLE_XS }px;
   `};
 `;

@@ -4,7 +4,6 @@ import { Button } from '@components/Button';
 
 import followingDietImg from '@assets/following-diet.png';
 import offDietImg from '@assets/off-diet.png';
-import React from 'react';
 
 export function Feedback() {
   const followingDiet = {

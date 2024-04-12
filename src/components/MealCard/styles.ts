@@ -21,7 +21,7 @@ export const Time = styled.Text`
   ${({ theme }) => css`
     color: ${ theme.COLORS.GRAY_1 };
     font-family: ${ theme.FONT_FAMILY.BOLD };
-    font-size: ${ theme.FONT_SIZE.XS }px;
+    font-size: ${ theme.FONT_SIZE.BODY_XS }px;
   `};
 `;
 
@@ -37,7 +37,7 @@ export const Meal = styled.Text`
   ${({ theme }) => css`
     color: ${ theme.COLORS.GRAY_2 };
     font-family: ${ theme.FONT_FAMILY.REGULAR };
-    font-size: ${ theme.FONT_SIZE.MD }px;
+    font-size: ${ theme.FONT_SIZE.BODY_M }px;
   `};
 `;
 
