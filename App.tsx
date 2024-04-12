@@ -1,4 +1,5 @@
 import { StatusBar } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from 'styled-components/native';
 import { useFonts, NunitoSans_400Regular, NunitoSans_700Bold} from '@expo-google-fonts/nunito-sans';
 
@@ -7,7 +8,7 @@ import theme from  './src/theme';
 import { Home } from '@screens/Home';
 import { Loading } from '@components/Loading';
 import { NewMeal } from '@screens/NewMeal';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Feedback } from '@screens/Feedback';
 
 export default function App() {
   const [fontsLoaded] = useFonts({NunitoSans_400Regular, NunitoSans_700Bold});
@@ -21,7 +22,7 @@ export default function App() {
       />
 
       <SafeAreaProvider>
-        {fontsLoaded ? <NewMeal /> : <Loading/>}
+        {fontsLoaded ? <Feedback /> : <Loading/>}
       </SafeAreaProvider>
     </ThemeProvider>
   );
