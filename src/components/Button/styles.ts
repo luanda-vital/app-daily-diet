@@ -9,7 +9,6 @@ type Props = {
 }
 
 export const Container = styled(TouchableOpacity) <Props>`
-  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;

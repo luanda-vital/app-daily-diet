@@ -18,3 +18,21 @@ export const InputContainer = styled.View`
   flex: 1;
   gap: 24px;
 `;
+
+export const DateTimeContainer = styled.View`
+  flex-direction: row;
+  gap: 20px;
+`;
+
+export const Press = styled.Pressable`
+  flex: 1;
+`;
+
+export const DietContainer = styled.View`
+  gap:4px;
+`;
+
+export const SelectContainer = styled.View`
+  flex-direction: row;
+  gap: 8px;
+`;

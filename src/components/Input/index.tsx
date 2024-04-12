@@ -1,4 +1,5 @@
-import { Container, Label, Field, InputTypeProps } from './styles';
+import { Label } from '@components/Label';
+import { Container, Field } from './styles';
 import { TextInputProps } from 'react-native';
 
 type Props = TextInputProps & {
@@ -8,7 +9,7 @@ type Props = TextInputProps & {
 export function Input({ title, ...rest }: Props) {
   return (
     <Container>
-      <Label>{ title }</Label>
+      <Label title={title} />
       <Field { ... rest } />
     </Container>
   );

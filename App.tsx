@@ -7,6 +7,7 @@ import theme from  './src/theme';
 import { Home } from '@screens/Home';
 import { Loading } from '@components/Loading';
 import { NewMeal } from '@screens/NewMeal';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {
   const [fontsLoaded] = useFonts({NunitoSans_400Regular, NunitoSans_700Bold});
@@ -19,7 +20,9 @@ export default function App() {
         translucent
       />
 
-      {fontsLoaded ? <NewMeal /> : <Loading/>}
+      <SafeAreaProvider>
+        {fontsLoaded ? <NewMeal /> : <Loading/>}
+      </SafeAreaProvider>
     </ThemeProvider>
   );
 }
