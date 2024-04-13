@@ -2,13 +2,14 @@ import { useState } from 'react';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import Moment from 'moment';
 
-import { Container, ContentContainer, DateTimeContainer, DietContainer, InputContainer, Press, SelectContainer } from './styles';
+import { Container, DateTimeContainer, DietContainer, InputContainer, Press, SelectContainer } from './styles';
 
 import { Header } from '@components/Header';
 import { Input } from '@components/Input';
 import { Button } from '@components/Button';
 import { Select } from '@components/Select';
 import { Label } from '@components/Label';
+import { ContentBox } from '@components/ContentBox';
 
 export function NewMeal() {
   const [date, setDate] = useState<Date>();
@@ -41,7 +42,7 @@ export function NewMeal() {
     <Container>
       <Header title='Nova refeição'/>
 
-      <ContentContainer>
+      <ContentBox>
         <InputContainer>
           <Input title='Nome' />
 
@@ -99,7 +100,7 @@ export function NewMeal() {
         </InputContainer>
 
         <Button text='Cadastrar refeição'/>
-      </ContentContainer>
+      </ContentBox>
     </Container>
   )
 }

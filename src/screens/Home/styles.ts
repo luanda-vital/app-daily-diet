@@ -1,5 +1,13 @@
+import { ArrowUpRight } from 'phosphor-react-native';
+import { TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styled, { css } from 'styled-components/native';
+
+export type PercentageTypeStyleProps = 'FOLLOWING_DIET' | 'OFF_DIET';
+
+type Props = {
+  type: PercentageTypeStyleProps;
+}
 
 export const Container = styled(SafeAreaView)`
   flex: 1;
@@ -35,6 +43,29 @@ export const ProfilePictureContainer = styled.View`
 export const ProfilePicture = styled.Image`
   width: 100%;
   height: 100%;
+`;
+
+export const PercentageCard = styled(TouchableOpacity) <Props>`
+  padding: 20px 16px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+
+  background-color: ${({ theme, type }) =>
+    type==='FOLLOWING_DIET' ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT
+  };
+`;
+
+export const Icon = styled(ArrowUpRight).attrs(({}) => ({
+  size: 24,
+  })) <Props>`
+
+  color: ${({ theme, type }) =>
+    type==='FOLLOWING_DIET' ? theme.COLORS.GREEN_DARK : theme.COLORS.RED_DARK
+  };
+
+  position: absolute;
+  right: 8px;
+  top: 8px;
 `;
 
 export const NewMealText = styled.Text`

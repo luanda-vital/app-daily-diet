@@ -3,8 +3,9 @@ import { SectionList } from 'react-native';
 import {
   Container,
   Header, Logo, ProfilePictureContainer, ProfilePicture,
+  PercentageTypeStyleProps, PercentageCard, Icon,
   NewMealText,
-  ListHeader, ListSectionSeparator, ListItemSeparator, EmptyListContainer, EmptyListText
+  ListHeader, ListSectionSeparator, ListItemSeparator, EmptyListContainer, EmptyListText,
 } from './styles';
 
 import { Button } from '@components/Button';
@@ -12,6 +13,7 @@ import { MealCard } from '@components/MealCard';
 
 import logoImg from '@assets/logo.png';
 import profilePicture from '@assets/profile-pic.jpg';
+import { FollowingDietPercentage } from '@components/FollowingDietPercentage';
 
 interface Meal {
   date: string;
@@ -23,9 +25,13 @@ interface Meal {
 interface mealsList {
   title: string,
   data: Meal[]
-} 
+}
 
-export function Home() {
+type Props = {
+  type?: PercentageTypeStyleProps,
+}
+
+export function Home({type='FOLLOWING_DIET'}: Props) {
   const meals: Meal[] = [
     {
       date: '2024-02-22',
@@ -131,9 +137,15 @@ export function Home() {
         <Logo source={ logoImg } />
 
         <ProfilePictureContainer>
-          <ProfilePicture source={ profilePicture }/>
+          <ProfilePicture source={ profilePicture } />
         </ProfilePictureContainer>
       </Header>
+
+      <PercentageCard type={type}>
+        <Icon type={type} />
+
+        <FollowingDietPercentage value={90.86} />
+      </PercentageCard>
 
       <NewMealText>Refeições</NewMealText>
   
