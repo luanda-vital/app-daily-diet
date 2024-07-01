@@ -11,7 +11,6 @@ type Props = {
 
 export const Container = styled(SafeAreaView) <Props>`
   flex: 1;
-  align-items: center;
 
   background-color: ${({ theme, type }) =>
     type==='FOLLOWING_DIET' ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT

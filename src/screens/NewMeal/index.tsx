@@ -10,6 +10,7 @@ import { Button } from '@components/Button';
 import { Select } from '@components/Select';
 import { Label } from '@components/Label';
 import { ContentBox } from '@components/ContentBox';
+import { Text } from 'react-native';
 
 export function NewMeal() {
   const [date, setDate] = useState<Date>();
@@ -98,6 +99,11 @@ export function NewMeal() {
             onCancel={hideDatePicker}
           />
         </InputContainer>
+
+        <Text>{date ? date.toString() : ''}</Text>
+        <Text>{date ? date.toISOString().split('T')[0] : ''}</Text>
+        <Text>{time ? time.toString():  ''}</Text>
+        <Text>{time ? time.toTimeString().split(' ')[0] :  ''}</Text>
 
         <Button text='Cadastrar refeição'/>
       </ContentBox>

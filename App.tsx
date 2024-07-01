@@ -10,6 +10,7 @@ import { Loading } from '@components/Loading';
 import { NewMeal } from '@screens/NewMeal';
 import { Feedback } from '@screens/Feedback';
 import { Statistics } from '@screens/Statistics';
+import { Meal } from '@screens/Meal';
 
 export default function App() {
   const [fontsLoaded] = useFonts({NunitoSans_400Regular, NunitoSans_700Bold});
@@ -23,7 +24,7 @@ export default function App() {
       />
 
       <SafeAreaProvider>
-        {fontsLoaded ? <Home /> : <Loading/>}
+        {fontsLoaded ? <NewMeal /> : <Loading/>}
       </SafeAreaProvider>
     </ThemeProvider>
   );
