@@ -5,12 +5,9 @@ import { useFonts, NunitoSans_400Regular, NunitoSans_700Bold} from '@expo-google
 
 import theme from  './src/theme';
 
-import { Home } from '@screens/Home';
 import { Loading } from '@components/Loading';
-import { NewMeal } from '@screens/NewMeal';
-import { Feedback } from '@screens/Feedback';
-import { Statistics } from '@screens/Statistics';
-import { Meal } from '@screens/Meal';
+
+import { Routes } from './src/routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({NunitoSans_400Regular, NunitoSans_700Bold});
@@ -24,7 +21,7 @@ export default function App() {
       />
 
       <SafeAreaProvider>
-        {fontsLoaded ? <NewMeal /> : <Loading/>}
+        {fontsLoaded ? <Routes /> : <Loading/>}
       </SafeAreaProvider>
     </ThemeProvider>
   );

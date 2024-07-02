@@ -1,4 +1,5 @@
 import { SectionList } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import {
   Container,
@@ -131,6 +132,12 @@ export function Home({type='FOLLOWING_DIET'}: Props) {
     return mealsList;
   }
 
+  const navigation = useNavigation();
+
+  function handleNewMeal() {
+    navigation.navigate('new');
+  }
+
   return (
     <Container>
       <Header>
@@ -153,6 +160,7 @@ export function Home({type='FOLLOWING_DIET'}: Props) {
         icon='Plus'
         text='Nova refeição'
         style={{marginBottom: 32}}
+        onPress={handleNewMeal}
       />
 
       <SectionList
